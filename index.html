@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="koch10.webp">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <title>Interactive Koch Snowflake</title>
+</head>
+<body>
+    <div class="header"></div>
+    <div class="wrapper">
+        <div id="controls">
+            <div class="color-wrapper">
+                <p id="color-title">Background</p>
+                <input type="color" id="bg-picker" class="c-picker" value="#474646">
+                <p id="color-title">Color</p>
+                <input type="color" id="color-picker" class="c-picker" value="#ebebeb">
+            </div>
+            <button id="toggle-random" class="button">Enable Random</button>
+            <div class="slider-wrapper">
+                <div class="slider">
+                    <input id="linewidth-slider" class="slider-enabled" type="range" min="1" max="12" value="2" oninput="linewidth_value.innerText = `Stroke Width: ` + this.value">
+                </div>
+                <div class="slider-text">
+                    <p id="linewidth_value" class="enabled">Stroke Width: 2</p>
+                </div>
+            </div>
+            <div class="slider-wrapper">
+                <div class="slider">
+                    <input id="order-slider" class="slider-enabled" type="range" min="1" max="10" value="1" oninput="order_value.innerText = `Order: ` + this.value">
+                </div>
+                <div class="slider-text">
+                    <p id="order_value" class="enabled">Order: 1</p>
+                </div>
+            </div>
+            <div class="slider-wrapper">
+                <div class="slider">
+                    <input id="rotation-slider" class="slider-enabled" type="range" min="0" max="24" value="0" oninput="rotate_value.innerText = `Rotation: ` + this.value*15 + `°`">
+                </div>
+                <div class="slider-text">
+                    <p id="rotate_value" class="enabled">Rotation: 0°</p>
+                </div>
+            </div>
+            <div class="scale-wrapper">
+                <button id="zoom-out" class="button">Zoom Out</button>
+                <button id="zoom-in" class="button">Zoom In</button>
+            </div>
+            <p id="scale-text">Scale: 100%</p>
+            <button id="reset" class="button">Reset</button>
+        </div>
+        <canvas id="canvas"></canvas>
+    </div>
+    <footer>- Designed and Developed by Cameron Hall</footer>
+</body>
+</html>
